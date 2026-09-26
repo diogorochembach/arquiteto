@@ -1,11 +1,38 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Header from '../components/Header.jsx';
+import HeroSection from '../components/HeroSection.jsx';
+import PortfolioSection from '../components/PortfolioSection.jsx';
+import ConsultationModal from '../components/ConsultationModal.jsx';
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="VERVE | Studio de Arquitetura & Interior Design Contemporâneo">
+	<main class="min-h-screen bg-[#090b0e] text-white selection:bg-[#D4AF37] selection:text-[#090b0e]">
+		<!-- 1. Componentes na Primeira Dobra (Hero/Header): client:load para interatividade imediata -->
+		<Header client:load />
+		<HeroSection client:load />
+
+		<!-- 2. Componentes Abaixo da Dobra (Scroll/Seções inferiores): client:visible para adiar o JS até a visualização -->
+		<PortfolioSection client:visible />
+
+		<!-- Footer Estático HTML (Zero JS compilado) -->
+		<footer class="py-8 bg-[#060709] border-t border-white/5 text-center text-xs text-gray-500 font-light">
+			<div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-4">
+				<div class="flex items-center gap-2">
+					<span class="font-serif text-lg text-white font-medium tracking-widest">VERVE</span>
+					<span class="text-[10px] uppercase text-[#D4AF37] font-mono">| Arquitetura & Interior Design</span>
+				</div>
+				<p>© 2026 VERVE Arquitetura Autoral. Todos os direitos reservados.</p>
+				<div class="flex items-center gap-6 text-[11px] text-gray-400">
+					<a href="#hero" class="hover:text-[#D4AF37]">Início</a>
+					<a href="#portfolio" class="hover:text-[#D4AF37]">Portfólio</a>
+					<a href="#manifesto" class="hover:text-[#D4AF37]">Filosofia</a>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Modal de Agendamento: client:visible para carregar JS sob demanda -->
+		<ConsultationModal client:visible />
+	</main>
 </Layout>
+
