@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.jsx';
+import GsapCardDemo from '../components/GsapCardDemo.jsx';
+import GsapScrollTriggerDemo from '../components/GsapScrollTriggerDemo.jsx';
+import GsapPinScrubDemo from '../components/GsapPinScrubDemo.jsx';
+---
+
+<Layout title="GSAP Pinning & Scrub Masterclass | VERVE Arquitetura">
+	<main class="min-h-screen bg-[#090b0e] text-white selection:bg-[#D4AF37] selection:text-[#090b0e] pt-24 pb-16">
+		<Header client:load />
+
+		<div class="max-w-7xl mx-auto px-6 mb-8">
+			<div class="flex items-center gap-2 text-xs font-mono text-[#D4AF37] mb-2">
+				<a href="/" class="hover:underline">Home</a>
+				<span>/</span>
+				<span>Masterclass GSAP: Pin, Scrub & Scroll</span>
+			</div>
+			<h1 class="text-3xl md:text-5xl font-serif font-bold text-white tracking-wide mb-4">
+				GSAP Pinning, Scrub & Narrativa Interativa
+			</h1>
+			<p class="text-gray-400 text-sm max-w-2xl">
+				Demonstração de fixação de tela (<code class="text-[#D4AF37] font-mono">pin: true</code>), controle de suavização (<code class="text-[#D4AF37] font-mono">scrub: 1</code> vs <code class="text-[#D4AF37] font-mono">scrub: true</code>) e escopo de scroll (<code class="text-[#D4AF37] font-mono">end: "+=1400"</code>).
+			</p>
+		</div>
+
+		<section class="px-6 space-y-12">
+			<GsapCardDemo client:load />
+			<GsapScrollTriggerDemo client:load />
+			<GsapPinScrubDemo client:load />
+		</section>
+	</main>
+</Layout>

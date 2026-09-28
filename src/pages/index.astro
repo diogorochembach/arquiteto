@@ -4,6 +4,9 @@ import Header from '../components/Header.jsx';
 import HeroSection from '../components/HeroSection.jsx';
 import PortfolioSection from '../components/PortfolioSection.jsx';
 import ConsultationModal from '../components/ConsultationModal.jsx';
+import GsapCardDemo from '../components/GsapCardDemo.jsx';
+import GsapScrollTriggerDemo from '../components/GsapScrollTriggerDemo.jsx';
+import GsapPinScrubDemo from '../components/GsapPinScrubDemo.jsx';
 ---
 
 <Layout title="VERVE | Studio de Arquitetura & Interior Design Contemporâneo">
@@ -14,6 +17,13 @@ import ConsultationModal from '../components/ConsultationModal.jsx';
 
 		<!-- 2. Componentes Abaixo da Dobra (Scroll/Seções inferiores): client:visible para adiar o JS até a visualização -->
 		<PortfolioSection client:visible />
+
+		<!-- 3. Seção Interativa de Animações GSAP, ScrollTrigger e Pinning -->
+		<section class="py-16 px-6 bg-[#07090c] border-t border-b border-white/5 space-y-12">
+			<GsapCardDemo client:visible />
+			<GsapScrollTriggerDemo client:visible />
+			<GsapPinScrubDemo client:visible />
+		</section>
 
 		<!-- Footer Estático HTML (Zero JS compilado) -->
 		<footer class="py-8 bg-[#060709] border-t border-white/5 text-center text-xs text-gray-500 font-light">
